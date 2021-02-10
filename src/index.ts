@@ -4,6 +4,7 @@ import { DateTime } from "luxon";
 import { ICampsite, DateAndStatus, ICampground } from "./types";
 import * as RecreationGov from "./recreation_gov";
 import * as ReserveCA from "./reserve_california";
+import * as QPWS from "./qpws";
 
 function matchAvailableDateRanges(
   availabilities: DateAndStatus[],
@@ -149,6 +150,7 @@ async function doTheThing(
 enum APIChoice {
   RecreationGov = 'recreation_gov',
   ReserveCA = 'reserve_ca',
+  QPWS = 'qpws',
 }
 
 type Argv = {
@@ -160,7 +162,7 @@ type Argv = {
 };
 
 function pickAPI(choice: APIChoice) {
-  return choice === APIChoice.RecreationGov ? RecreationGov : ReserveCA;
+  return choice === APIChoice.RecreationGov ? RecreationGov : ReserveCA ;
 }
 
 async function main(argv: Argv) {

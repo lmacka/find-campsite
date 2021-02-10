@@ -1,6 +1,6 @@
 # find-campsite
 
-This is a simple script that checks recreation.gov or reservecalifornia.com for any sites at a campground available for a length of time starting on a particular day of the week.
+This is a simple script that checks recreation.gov, reservecalifornia.com or QPWS (Australia) for any sites at a campground available for a length of time starting on a particular day of the week.
 
 ## Install
 
@@ -8,13 +8,15 @@ This is a simple script that checks recreation.gov or reservecalifornia.com for 
 
 ## Usage
 
-`find-campsite --campground <campground ID> [--api recreation_gov OR reserve_ca] [--day fri] [--nights 2]`
+`find-campsite --campground <campground ID> [--api recreation_gov OR reserve_ca OR qpws] [--day fri] [--nights 2]`
 
 ### Campground IDs
 
 On recreation.gov, you can find a campground's ID by looking at your URL bar on recreation.gov. In the URL `https://www.recreation.gov/camping/campgrounds/231958` for Arroyo Seco Campground, `231958` is the ID.
 
 reservecalifornia.com is a bit trickier. You will need to find and click through to a campsite and monitor the Network tab in your browser's developer tools for a request to `calirdr.usedirect.com/rdr/rdr/search/grid`. The `FacilityId` referenced in the request body is the ID.
+
+Queensland Parks & Wildlife Services support in the initial stages of being added; expect bugs for now.
 
 I welcome any PRs to introduce text-based campground lookups!
 
